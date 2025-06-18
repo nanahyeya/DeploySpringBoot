@@ -6,18 +6,21 @@ import com.employee.deploy.entity.Department;
 import com.employee.deploy.exception.ResourceNotFoundException;
 import com.employee.deploy.repository.DepartmentRepository;
 import com.employee.deploy.service.DepartmentService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class DepartmentServiceImpl implements DepartmentService {
 
     private DepartmentRepository departmentRepository;
 
     @Override
+    @Transactional
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         Department department = DepartmentMapper.mapToDepartment(departmentDto);
         Department savedDepartment = departmentRepository.save(department);
@@ -44,6 +47,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    @Transactional
     public DepartmentDto updateDepartment(Long departmentId, DepartmentDto updatedDepartment) {
         Department department = departmentRepository.findById(departmentId)
                 .orElseThrow(() ->
@@ -59,6 +63,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
+    @Transactional
     public void deleteDepartment(Long departmentId) {
         departmentRepository.findById(departmentId)
                 .orElseThrow(() ->
