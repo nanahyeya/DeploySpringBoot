@@ -17,7 +17,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class DepartmentServiceImpl implements DepartmentService {
 
-    private DepartmentRepository departmentRepository;
+    private final DepartmentRepository departmentRepository;
 
     @Override
     @Transactional
