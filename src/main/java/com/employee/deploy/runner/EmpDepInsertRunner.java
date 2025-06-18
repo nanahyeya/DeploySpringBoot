@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@Profile("prod")
+@Profile("local")
 public class EmpDepInsertRunner implements ApplicationRunner {
     @Autowired
     DepartmentRepository departmentRepository;
