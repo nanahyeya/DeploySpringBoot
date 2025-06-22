@@ -15,8 +15,8 @@ on:
     branches: [ "main" ]
 
 env:
-  DOCKER_IMAGE: springbootreactjs
-  DOCKER_TAG: 0.5
+  DOCKER_IMAGE: empbackend
+  DOCKER_TAG: 0.1
 
 jobs:
   build:
