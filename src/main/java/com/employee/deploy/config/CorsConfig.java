@@ -37,7 +37,7 @@ public class CorsConfig {
     public FilterRegistrationBean<?> corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // 명시적인 도메인만 허용
-        configuration.setAllowedOriginPatterns(List.of("https://localhost:3000", "https://another-trusted.com"));
+        configuration.setAllowedOriginPatterns(List.of("http://localhost:3000", "https://another-trusted.com"));
         // Credentials은 필요한 경우에만
         configuration.setAllowCredentials(true);
         // 필요한 헤더만 허용
