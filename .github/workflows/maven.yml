@@ -16,7 +16,7 @@ on:
 
 env:
   DOCKER_IMAGE: springbootreactjs
-  DOCKER_TAG: 0.4
+  DOCKER_TAG: 0.5
 
 jobs:
   build:
